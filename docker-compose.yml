@@ -1,0 +1,40 @@
+services:
+  dnf:
+    image: 1995chen/dnf:centos7-2.1.9.fix1
+    container_name: dnf
+    hostname: dnf
+    cap_add:
+      - NET_ADMIN
+    environment:
+      SERVER_GROUP: "3"
+      SERVER_GROUP_DB: "cain"
+      OPEN_CHANNEL: "11,52"
+      PUBLIC_IP: "127.0.0.1"
+      WEB_USER: "root"
+      WEB_PASS: "123456"
+      DNF_DB_ROOT_PASSWORD: "88888888"
+      GM_ACCOUNT: "gmuser"
+      GM_PASSWORD: "gmpass"
+      CLIENT_POOL_SIZE: "1"
+    volumes:
+      - D:/ws/trade-agent/dnf/data/log:/home/neople/game/log
+      - D:/ws/trade-agent/dnf/data/mysql:/var/lib/mysql
+      - D:/ws/trade-agent/dnf/data/data:/data
+    ports:
+      - "2000:180"
+      - "3000:3306"
+      - "7600:7600"
+      - "881:881"
+      - "7001:7001/tcp"
+      - "7001:7001/udp"
+      - "30011:30011"
+      - "31011:31011/udp"
+      - "30052:30052"
+      - "31052:31052/udp"
+      - "7300:7300"
+      - "2311-2313:2311-2313/udp"
+    cpus: 2.0
+    mem_limit: 8g
+    memswap_limit: -1
+    shm_size: "8g"
+    restart: unless-stopped
