@@ -94,7 +94,11 @@ services:
 
 
 
+步骤10
 
+下载GM https://pan.baidu.com/s/1mHppscmcrYLGng9I-RMGVQ?pwd=nvf3 
 
-
-
+127.0.0.1
+用户名 game
+密码 uu5!^%jg
+端口3000
